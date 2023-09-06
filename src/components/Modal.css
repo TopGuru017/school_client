@@ -1,0 +1,28 @@
+.modal-body{
+    background-color:#b5fdfd;
+    width: 100%;
+
+}
+
+.name-editor{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.text-editor{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+label {
+    color: #085097;
+}
+
+button {
+    background-color: #085097;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}

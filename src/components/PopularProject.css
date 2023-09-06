@@ -1,0 +1,33 @@
+.scroll-hidden {
+    margin-top: 20px;
+    border: 0.5px solid rgba(84, 84, 84,0.5);
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    overflow-y: hidden;
+}
+  
+.scroll-visible {
+    margin-top: 20px;
+    border: 0.5px solid rgba(84, 84, 84,0.5);
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    overflow-y: auto;
+}
+  
+
+.describetext {
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+}
+
+.describetext > p {
+    color: rgb(51, 53, 55);
+    font-size: 17px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
