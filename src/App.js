@@ -26,8 +26,8 @@ function App() {
         <Route exact path='/' element={islogin ? <Dashboard /> : <Landing />} />
         <Route exact path='/dashboard' element={islogin ? <Dashboard /> : <Login />} />
         <Route exact path='/own' element={islogin ? <Ownboard /> : <Login />} />
-        <Route exact path='/login' Component={Login} />
-        <Route exact path='/register' Component={Register} />
+        <Route exact path='/login' element={islogin ? <Dashboard /> : <Login />}/>
+        <Route exact path='/register' element={islogin ? <Dashboard /> : <Register />} />
       </Routes>
     </LanguageContext.Provider>
     </SearchContext.Provider>

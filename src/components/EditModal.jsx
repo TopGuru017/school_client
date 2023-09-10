@@ -19,7 +19,7 @@ function EditModal(props) {
     a.download = userinfo.name;
     a.click();
     await sleep(2000);
-    window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
+    window.location.href = '/dashboard';
   }
   const handleEdit = async () => {
     const res = await fetch('/api/edit', {
@@ -32,7 +32,7 @@ function EditModal(props) {
     })
     if(res.status === 200) alert("成功しました。")
     else alert("失敗しました。")
-    window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
+    window.location.href = '/dashboard';
   }
   const handleDelete = async () => {
     const res = await fetch('/api/delete', {
@@ -45,7 +45,7 @@ function EditModal(props) {
     });
     if(res.status === 200) alert("削除しました。")
     else alert("失敗しました。")
-    window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
+    window.location.href = '/dashboard';
   }
   const handleChange = (event) => {
     setEditname(event.target.value);

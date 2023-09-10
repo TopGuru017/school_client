@@ -10,9 +10,6 @@ export default function Login() {
     let dic_data = require('../assets/dictionary.json');
     const {currentlang, setCurrentlang} = useContext(LanguageContext);
 
-    if(localStorage.getItem('username')){
-        window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
-    }
     const [user, setUser] = useState({
         username : '',
         password : ''
@@ -45,7 +42,7 @@ export default function Login() {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('username', data.username);
                 console.log(data.token);
-                window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
+                window.location.href = '/dashboard';
             } else {
             alert(dic_data.alert_login[currentlang]);
             }

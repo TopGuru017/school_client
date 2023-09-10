@@ -59,7 +59,7 @@ function OwnProject() {
     else {
       alert(dic_data.alert_upload_failed[currentlang]);
     }
-    window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
+    window.location.href = '/dashboard';
   };
   return (
     <div className={scrollVisible ? 'scroll-visible' : 'scroll-hidden'}>
