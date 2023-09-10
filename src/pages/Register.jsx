@@ -32,7 +32,7 @@ export default function Register() {
         else {
             try {
                 
-                const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/register`, {
+                const res = await fetch('/api/register', {
                     method : "POST",
                     headers : {
                         "Content-Type" : "application/json"

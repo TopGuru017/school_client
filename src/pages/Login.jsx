@@ -26,7 +26,7 @@ export default function Login() {
         const {username, password} = user;
         console.log(username, password)
         try {
-            const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/login`, {
+            const res = await fetch('/api/login', {
                 method : "POST",
                 headers : {
                     "Content-Type" : "application/json"

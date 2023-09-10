@@ -13,7 +13,7 @@ function EditModal(props) {
   const [editname, setEditname] = useState("");
   const [editText, setEditText] = useState("");
   const handleDownload = async () => {
-    const url = `${process.env.REACT_APP_SERVER_URL}/${userinfo.path}`;
+    const url = `/api/${userinfo.path}`;
     const a = document.createElement('a');
     a.href = url;
     a.download = userinfo.name;
@@ -22,7 +22,7 @@ function EditModal(props) {
     window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
   }
   const handleEdit = async () => {
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/edit`, {
+    const res = await fetch('/api/edit', {
       method: "POST",
       headers: {
         "Content-Type" : "application/json",
@@ -35,7 +35,7 @@ function EditModal(props) {
     window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
   }
   const handleDelete = async () => {
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/delete`, {
+    const res = await fetch('/api/delete', {
       method: "POST",
       headers: {
         "Content-Type" : "application/json",

@@ -10,7 +10,7 @@ function PopularSprite() {
   const [scrollVisible, setScrollVisible] = useState(false);
   const [projectArray, setProjectArray] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_URL}/get_popular_sprite`, {
+    fetch('/api/get_popular_sprite', {
       method : "POST",
       headers : {
         'Content-Type': 'application/json',

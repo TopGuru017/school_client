@@ -40,7 +40,7 @@ function HeadBar() {
 
   const onFileChange = async (e) => {
     
-    const url = `${process.env.REACT_APP_SERVER_URL}/upload`;
+    const url = '/api/upload';
     const formData = new FormData();
     formData.append('file', e.target.files[0]);
     const config = {

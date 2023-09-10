@@ -11,7 +11,7 @@ function OwnSprite() {
   const [projectArray, setProjectArray] = useState([]);
   const fileInput = useRef(null);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_URL}/get_own_sprite`, {
+    fetch('/api/get_own_sprite', {
       method : "POST",
       headers : {
         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ function OwnSprite() {
   };
   const onFileChange = async (e) => {
     
-    const url = `${process.env.REACT_APP_SERVER_URL}/upload_sprite`;
+    const url = '/api/upload_sprite';
     console.log("URL is" ,url);
     const formData = new FormData();
     formData.append('file', e.target.files[0]);

@@ -11,7 +11,7 @@ function OwnProject() {
   const [projectArray, setProjectArray] = useState([]);
   const fileInput = useRef(null);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_URL}/get_own_project`, {
+    fetch('/api/get_own_project', {
       method : "POST",
       headers : {
         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ function OwnProject() {
   };
   const onFileChange = async (e) => {
     
-    const url = `${process.env.REACT_APP_SERVER_URL}/upload`;
+    const url = '/api/upload';
     console.log("URL is" ,url);
     const formData = new FormData();
     formData.append('file', e.target.files[0]);

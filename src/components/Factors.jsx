@@ -10,7 +10,7 @@ function Factors({factors}) {
 
   const handleDownload = (factor) => {
     console.log(factor)
-    const url = `${process.env.REACT_APP_SERVER_URL}/${factor.path}`;
+    const url = `/api/${factor.path}`;
     const a = document.createElement('a');
     a.href = url;
     a.download = factor.name;

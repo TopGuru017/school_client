@@ -9,7 +9,7 @@ import LandingSection from '../home/LandingSection';
 // import Test from '../home/Test'
 
 function Landing() {
-    console.log(process.env.REACT_APP_SERVER_URL);
+
     return(
       <div className='landing-wrapper'>
         <LandingHeader />

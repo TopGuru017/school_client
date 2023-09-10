@@ -13,8 +13,8 @@ function DropDown() {
 
   const onFileChange = async (e) => {
     let url;
-    if(selectedOption === 'project') url = `${process.env.REACT_APP_SERVER_URL}/upload`;
-    else url = `${process.env.REACT_APP_SERVER_URL}/upload_sprite`;
+    if(selectedOption === 'project') url = '/api/upload';
+    else url = '/api/upload_sprite';
     const formData = new FormData();
     formData.append('file', e.target.files[0]);
     const config = {

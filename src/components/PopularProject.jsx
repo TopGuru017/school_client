@@ -9,7 +9,7 @@ function PopularProject() {
   const [scrollVisible, setScrollVisible] = useState(false);
   const [projectArray, setProjectArray] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_URL}/get_popular_project`, {
+    fetch('/api/get_popular_project', {
       method : "POST",
       headers : {
         'Content-Type': 'application/json',
