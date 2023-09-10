@@ -2,21 +2,21 @@ import React from 'react';
 import HeadBar from '../home/HeadBar';
 import Banner from '../home/Banner';
 import ChoiceBar from '../home/ChoiceBar';
-import MainSection from '../home/MainSection';
 import FootBar from '../home/FootBar';
+import OwnProject from '../components/OwnProject';
+import OwnSprite from '../components/OwnSprite';
 
-
-function Dashboard() {
-
+function Ownboard() {
   return (
     <div>
         <HeadBar />
         <Banner />
         <ChoiceBar />
-        <MainSection />
+        <OwnProject />
+        <OwnSprite />
         <FootBar />
     </div>
   );
 }
 
-export default Dashboard;
+export default Ownboard;

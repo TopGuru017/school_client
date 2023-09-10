@@ -3,10 +3,12 @@ import { useContext,useEffect, useState, useRef } from 'react';
 import './OwnSprite.css';
 import OwnFactors from './OwnFactors';
 import axios from 'axios';
-import { SearchContext } from '../App';
+import { LanguageContext, SearchContext } from '../App';
 
 function OwnSprite() {
   const {searchtext, setSearchtext} = useContext(SearchContext)
+  const {currentlang, setCurrentlang} = useContext(LanguageContext);
+  let dic_data = require('../assets/dictionary.json');
   const [scrollVisible, setScrollVisible] = useState(false);
   const [projectArray, setProjectArray] = useState([]);
   const fileInput = useRef(null);
@@ -51,12 +53,10 @@ function OwnSprite() {
     const response = await axios.post(url, formData, config);
     console.log(response)
     if(response.status === 200){
-      console.log("SUCESF")
-      // const res = await response.json();
-      alert('アップロードが成功しました。');
+      alert(dic_data.alert_upload_success[currentlang]);
     }
     else {
-      alert('アップロードが失敗しました。');
+      alert(dic_data.alert_upload_failed[currentlang]);
     }
     window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
   };
@@ -64,10 +64,10 @@ function OwnSprite() {
   return (
     <div className={scrollVisible ? 'scroll-visible' : 'scroll-hidden'}>
       <div className='describetext'>
-        <p>自分の部品</p>
+        <p>{dic_data.own_sprite[currentlang]}</p>
         <div>
         <input type="file" ref={fileInput} onChange={onFileChange} style={{ display: 'none' }} accept=".sprite3" />
-          <button className='normal' onClick={onButtonClick}>アップロード</button>
+          <button className='normal' onClick={onButtonClick}>{dic_data.upload[currentlang]}</button>
         </div>
         <p style={{ cursor : "pointer" }} onClick={() => setScrollVisible(!scrollVisible)}>もっと見る</p>
       </div>

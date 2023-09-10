@@ -23,25 +23,21 @@
     margin-top: 10px;
 }
 
-.headbar-wrapper > p{
+.headbar-wrapper > p {
     margin-top: auto;
     margin-bottom: auto;
-}
-
-p {
     font-size: 20px;
     color: white;
 }
 
-.modal-body {
-    margin-left: auto;
-    margin-right: auto;
-}
+
 
 .headbar-wrapper .signup-btn {
     cursor: pointer;
     margin-top: auto;
     margin-bottom: auto;
+    font-size: 20px;
+    color: white;
 }
 
 .headbar-wrapper > a {

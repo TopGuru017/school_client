@@ -2,3 +2,19 @@
     margin-top: 10px;
     text-align: center;
 }
+
+.footbar-container {
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.foot-text {
+    cursor: pointer;
+}

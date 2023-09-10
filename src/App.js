@@ -7,21 +7,29 @@ import Navbar from './pages/Navbar';
 import './App.css';
 import {  BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
+import Ownboard from './pages/Ownboard';
 
 import { createContext, useContext, useState } from 'react';
 
 export const SearchContext = createContext();
+export const LanguageContext = createContext();
 
 function App() {
   const [searchtext, setSearchtext] = useState('');
+  const [currentlang, setCurrentlang] = useState('jp');
+  const islogin = (localStorage.getItem("username") != null)
+  console.log(islogin);
   return (
     <SearchContext.Provider value={{ searchtext, setSearchtext }}>
+    <LanguageContext.Provider value={{ currentlang, setCurrentlang }}>
       <Routes>
-        <Route exact path='/' Component={Landing} />
-        <Route exact path='/dashboard' Component={Dashboard} />
+        <Route exact path='/' element={islogin ? <Dashboard /> : <Landing />} />
+        <Route exact path='/dashboard' element={islogin ? <Dashboard /> : <Login />} />
+        <Route exact path='/own' element={islogin ? <Ownboard /> : <Login />} />
         <Route exact path='/login' Component={Login} />
         <Route exact path='/register' Component={Register} />
       </Routes>
+    </LanguageContext.Provider>
     </SearchContext.Provider>
   );
 }

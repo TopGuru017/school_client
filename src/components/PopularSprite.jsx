@@ -3,9 +3,12 @@ import { useState, useEffect } from 'react';
 import './PopularSprite.css';
 import Factors from './Factors';
 import { useContext } from 'react';
-import { SearchContext } from '../App';
+import { LanguageContext, SearchContext } from '../App';
+let data = require('../assets/dictionary.json');
 
 function PopularSprite() {
+  const {currentlang, setCurrentlang} = useContext(LanguageContext);
+  let dic_data = require('../assets/dictionary.json');
   const {searchtext, setSearchtext} = useContext(SearchContext);
   const [scrollVisible, setScrollVisible] = useState(false);
   const [projectArray, setProjectArray] = useState([]);
@@ -32,7 +35,7 @@ function PopularSprite() {
   return (
     <div className={scrollVisible ? 'scroll-visible' : 'scroll-hidden'}>
       <div className='describetext' style={{     height: "20%" }}>
-        <p>注目の部品</p>
+        <p>{dic_data.popular_sprite[currentlang]}</p>
         <p style={{ cursor : "pointer" }} onClick={() => setScrollVisible(!scrollVisible)}>もっと見る</p>
       </div>
       <Factors factors={projectArray} />

@@ -1,8 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import SchoolIcon from "../assets/icons/school_icon.svg";
+import { useContext } from "react";
+import { LanguageContext } from "../App";
 
 function Navbar() {
+
+  const {currentlang, setCurrentlang} = useContext(LanguageContext);
+  let dic_data = require('../assets/dictionary.json');
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-light shadow">
@@ -42,13 +48,13 @@ function Navbar() {
               to="/login"
               className="btn btn-outline-primary ms-auto px-4 rounded-pill"
             >
-              <i className="fa fa-sign-in me-2"></i>サインイン
+              <i className="fa fa-sign-in me-2"></i>{dic_data.signin[currentlang]}
             </NavLink>
             <NavLink
               to="/register"
               className="btn btn-outline-primary ms-2 px-4 rounded-pill"
             >
-              <i className="fa fa-user-plus me-2"></i>登録
+              <i className="fa fa-user-plus me-2"></i>{dic_data.signup[currentlang]}
             </NavLink>
           </div>
         </div>

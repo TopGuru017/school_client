@@ -9,10 +9,13 @@ import "./HeadBar.css";
 import DropDown from "../components/DropDown";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import { useContext } from "react";
+import { LanguageContext } from "../App";
 
 function HeadBar() {
 
-
+  const {currentlang, setCurrentlang} = useContext(LanguageContext);
+  let dic_data = require('../assets/dictionary.json');
   const [username, setUsername] = useState('')
 
   useEffect(() => {
@@ -54,10 +57,10 @@ function HeadBar() {
     if(response.status === 200){
       console.log("SUCESF")
       // const res = await response.json();
-      alert('アップロードが成功しました。');
+      alert(dic_data.alert_upload_success[currentlang]);
     }
     else {
-      alert('アップロードが失敗しました。');
+      alert(dic_data.alert_upload_failed[currentlang]);
     }
     window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
   };
@@ -85,12 +88,12 @@ function HeadBar() {
       <input type="file" ref={fileInput} onChange={onFileChange} style={{ display: 'none' }} />
       {/* <p  className="signup-btn" onClick={onButtonClick}>アップロード</p> */}
       <DropDown />
-      <p>自分の部品</p>
-      <p onClick={gotoServer} className="signup-btn">作ろう</p>
-      <p>見る</p>
+      <NavLink to='/own'><p className="signup-btn">{dic_data.own_work[currentlang]}</p></NavLink>
+      <p onClick={gotoServer} className="signup-btn">{dic_data.make[currentlang]}</p>
+      <NavLink to='/dashboard'><p className="signup-btn">{dic_data.view[currentlang]}</p></NavLink>
       <SearchBox />
       <LangChoice />
-      <p  className="signup-btn"　 onClick={handleLogout}>サインアウト</p>
+      <p  className="signup-btn" onClick={handleLogout}>{dic_data.signout[currentlang]}</p>
       <p style={{ marginRight : "100px" }}>{username}</p>
     </div>
   );

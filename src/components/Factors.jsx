@@ -30,6 +30,7 @@ function Factors({factors}) {
 
   const startIndex = currentPageIndex * factorsPerPage;
   const endIndex = Math.min(startIndex + factorsPerPage, factors.length);
+  console.log(factors.length)
   const factorsToDisplay = factors.slice(startIndex, endIndex);
 
   return (

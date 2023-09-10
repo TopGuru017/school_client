@@ -2,13 +2,16 @@ import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 import './PopularProject.css';
 import Factors from './Factors';
-import { SearchContext } from '../App';
+import { LanguageContext, SearchContext } from '../App';
 
 function PopularProject() {
+  const {currentlang, setCurrentlang} = useContext(LanguageContext);
+  let dic_data = require('../assets/dictionary.json');
   const {searchtext, setSearchtext} = useContext(SearchContext);
   const [scrollVisible, setScrollVisible] = useState(false);
   const [projectArray, setProjectArray] = useState([]);
   useEffect(() => {
+    console.log(process.env.REACT_APP_SERVER_URL)
     fetch('/api/get_popular_project', {
       method : "POST",
       headers : {
@@ -32,7 +35,7 @@ function PopularProject() {
   return (
     <div className={scrollVisible ? 'scroll-visible': 'scroll-hidden'}>
       <div className='describetext'>
-        <p>注目のプロジェクト</p>
+        <p>{dic_data.popular_project[currentlang]}</p>
         <p style={{ cursor : "pointer" }} onClick={() => setScrollVisible(!scrollVisible)}>もっと見る</p>
       </div>
       <Factors factors={projectArray} />

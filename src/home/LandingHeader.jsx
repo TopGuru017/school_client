@@ -6,8 +6,13 @@ import SearchBox from "../components/SearchBox";
 import LangChoice from "../components/LangChoice";
 import "./HeadBar.css";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { LanguageContext } from "../App";
 
 function LandingHeader() {
+
+  const {currentlang, setCurrenlang} = useContext(LanguageContext);
+  let dic_data = require('../assets/dictionary.json');
 
   const gotoServer = () => {
     console.log("yes");
@@ -33,12 +38,12 @@ function LandingHeader() {
           style={{ width: "90px", height: "35px", marginRight:"10px"}} // Adjust width and height as needed
         />
       </div>
-      <p onClick={gotoServer} className="signup-btn">作ろう</p>
-      <p>見る</p>
+      <p onClick={gotoServer} className="signup-btn">{dic_data.make[currentlang]}</p>
+      <p>{dic_data.view[currentlang]}</p>
       <SearchBox />
       <LangChoice />
-      <NavLink to="/login"><p  className="signup-btn">サインイン</p></NavLink>
-      <NavLink to="/register"><p style={{ marginRight: "40px" }}  className="signup-btn" >登録</p></NavLink>
+      <NavLink to="/login"><p  className="signup-btn">{dic_data.signin[currentlang]}</p></NavLink>
+      <NavLink to="/register"><p style={{ marginRight: "40px" }}  className="signup-btn" >{dic_data.signup[currentlang]}</p></NavLink>
     </div>
   );
 }

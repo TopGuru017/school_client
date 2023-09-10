@@ -1,7 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import axios from "axios";
+import { LanguageContext } from "../App";
+
 
 function DropDown() {
+  const {currentlang, setCurrentlang} = useContext(LanguageContext);
+  let dic_data = require('../assets/dictionary.json');
   const [selectedOption, setSelectedOption] = useState("");
   const fileInput = useRef(null);
 
@@ -26,12 +30,10 @@ function DropDown() {
     const response = await axios.post(url, formData, config);
     console.log(response)
     if(response.status === 200){
-      console.log("SUCESF")
-      // const res = await response.json();
-      alert('アップロードが成功しました。');
+      alert(dic_data.alert_upload_success[currentlang]);
     }
     else {
-      alert('アップロードが失敗しました。');
+      alert(dic_data.alert_upload_failed[currentlang]);
     }
     window.location.href = `${process.env.REACT_APP_CLIENT_URL}/dashboard`;
   };
@@ -40,9 +42,9 @@ function DropDown() {
     <div className="langchoice-wrapper">
       <input type="file" ref={fileInput} onChange={onFileChange} style={{ display: 'none' }} accept=".sb3, .sprite3"/>
       <select value={selectedOption} onChange={handleChange}>
-        <option value="" disabled>アップロード</option>
-        <option value="project" >自分のプロジェクト</option>
-        <option value="sprite">自分の部品</option>
+        <option value="" disabled>{dic_data.upload[currentlang]}</option>
+        <option value="project" >{dic_data.own_project[currentlang]}</option>
+        <option value="sprite">{dic_data.own_sprite[currentlang]}</option>
       </select>
     </div>
   );

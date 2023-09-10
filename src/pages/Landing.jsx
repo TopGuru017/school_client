@@ -8,7 +8,7 @@ import './Landing.css';
 import LandingSection from '../home/LandingSection';
 // import Test from '../home/Test'
 
-function Landing() {
+function Landing() {  
 
     return(
       <div className='landing-wrapper'>
