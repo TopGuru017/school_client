@@ -69,7 +69,6 @@ function OwnProject() {
         <input type="file" ref={fileInput} onChange={onFileChange} style={{ display: 'none' }} accept=".sb3"/>
           <button className='normal' onClick={onButtonClick}>{dic_data.upload[currentlang]}</button>
         </div>
-        <p style={{ cursor : "pointer" }} onClick={() => setScrollVisible(!scrollVisible)}>もっと見る</p>
       </div>
       <OwnFactors factors={projectArray} />
     </div>

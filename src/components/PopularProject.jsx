@@ -36,7 +36,6 @@ function PopularProject() {
     <div className={scrollVisible ? 'scroll-visible': 'scroll-hidden'}>
       <div className='describetext'>
         <p>{dic_data.popular_project[currentlang]}</p>
-        <p style={{ cursor : "pointer" }} onClick={() => setScrollVisible(!scrollVisible)}>もっと見る</p>
       </div>
       <Factors factors={projectArray} />
     </div>
