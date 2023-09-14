@@ -8,8 +8,10 @@ import './App.css';
 import {  BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Ownboard from './pages/Ownboard';
+import ViewPage from './pages/ViewPage';
 
 import { createContext, useContext, useState } from 'react';
+import View from './components/View';
 
 export const SearchContext = createContext();
 export const LanguageContext = createContext();
@@ -28,6 +30,7 @@ function App() {
         <Route exact path='/own' element={islogin ? <Ownboard /> : <Login />} />
         <Route exact path='/login' element={islogin ? <Dashboard /> : <Login />}/>
         <Route exact path='/register' element={islogin ? <Dashboard /> : <Register />} />
+        <Route exact path='/view' element={islogin ? <View /> : <Login />} />
       </Routes>
     </LanguageContext.Provider>
     </SearchContext.Provider>

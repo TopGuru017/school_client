@@ -71,6 +71,18 @@
         "en" : "Popular Sprite",
         "jp" : "注目の部品"
     },
+    "project" : {
+        "en" : "Projects",
+        "jp" : "プロジェクト"
+    },
+    "studio" : {
+        "en" : "Studios",
+        "jp" : "スタジオ"
+    },
+    "sprite" : {
+        "en" : "Sprites",
+        "jp" : "部品"
+    },
     "recruit" : {
         "en" : "Recruitment",
         "jp" : "求人"

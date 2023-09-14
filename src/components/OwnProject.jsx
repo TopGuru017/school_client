@@ -64,8 +64,8 @@ function OwnProject() {
   return (
     <div className={scrollVisible ? 'scroll-visible' : 'scroll-hidden'}>
       <div className='describetext'>
-        <p>{dic_data.own_project[currentlang]}</p>
-        <div style={{ marginRight: "60px" }}>
+        <div><p>{dic_data.own_project[currentlang]}</p></div>
+        <div>
         <input type="file" ref={fileInput} onChange={onFileChange} style={{ display: 'none' }} accept=".sb3"/>
           <button className='normal' onClick={onButtonClick}>{dic_data.upload[currentlang]}</button>
         </div>

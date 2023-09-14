@@ -64,9 +64,9 @@ function OwnSprite() {
   return (
     <div className={scrollVisible ? 'scroll-visible' : 'scroll-hidden'}>
       <div className='describetext'>
-        <p>{dic_data.own_sprite[currentlang]}</p>
+        <div><p>{dic_data.own_sprite[currentlang]}</p></div>
         <div>
-        <input type="file" ref={fileInput} onChange={onFileChange} style={{ display: 'none' }} accept=".sprite3" />
+          <input type="file" ref={fileInput} onChange={onFileChange} style={{ display: 'none' }} accept=".sprite3" />
           <button className='normal' onClick={onButtonClick}>{dic_data.upload[currentlang]}</button>
         </div>
       </div>

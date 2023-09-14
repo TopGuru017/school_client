@@ -90,7 +90,7 @@ function HeadBar() {
       <DropDown />
       <NavLink to='/own'><p className="signup-btn">{dic_data.own_work[currentlang]}</p></NavLink>
       <p onClick={gotoServer} className="signup-btn">{dic_data.make[currentlang]}</p>
-      <NavLink to='/dashboard'><p className="signup-btn">{dic_data.view[currentlang]}</p></NavLink>
+      <NavLink to='/view'><p className="signup-btn">{dic_data.view[currentlang]}</p></NavLink>
       <SearchBox />
       <LangChoice />
       <p  className="signup-btn" onClick={handleLogout}>{dic_data.signout[currentlang]}</p>

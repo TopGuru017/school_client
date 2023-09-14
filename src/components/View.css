@@ -1,0 +1,81 @@
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: rgb(147, 152, 152);
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #5f5d5d;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .viewmain-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns with equal width */
+    gap: 10px;
+    margin-top: 50px;
+  }
+
+  .view-factor {
+    border: 0.5px solid #c1c1c1;
+    border-radius: 15px;
+    width: 100%; /* Each item takes up 100% of its grid cell */
+    aspect-ratio: 1; /* Maintains a 1:1 aspect ratio (width equals height) */
+    background-color: #f0f0f0; /* Add your styling for each item here */
+    align-items: center;
+    text-align: center;
+  }
+  
+  .view-factor > img {
+    margin-top: 5px;
+    width: 70%;
+    height: 70%;
+  }
+
+  .view-detail {
+    text-align: center;
+  }
+  .view-detail-header {
+  }
+  .view-detail-img {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    border: 0.5px solid rgb(107, 106, 106);
+    border-radius: 15px;
+    width: 30%;
+    aspect-ratio: 1;
+  }
+  .view-detail-img > img {
+    width: 300px;
+    height: 300px;
+  }
